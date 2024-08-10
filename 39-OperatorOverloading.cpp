@@ -78,11 +78,23 @@ class alpha
 		return m;
 	}
 	
+	friend alpha operator-(alpha x, alpha y);
+	
 	void get()
 	{
 		cout<<endl<<a<<" "<<b<<" "<<c<<"("<<int(c)<<")";
 	}
 };
+
+alpha operator-(alpha x, alpha y)
+{
+	alpha z;
+	z.a=x.a-y.a;
+	z.b=x.b-y.b;
+	z.c=x.c-y.c;
+	
+	return z;
+}
 
 int main()
 {
@@ -91,6 +103,9 @@ int main()
 	f=x+y;
 	x.get();
 	y.get();
+	f.get();
+	
+	f=x-y;
 	f.get();
 	
 	return 0;
